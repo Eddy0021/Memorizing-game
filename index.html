@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Something</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+        .centerDiv
+        {
+            align-items: center;
+            height:500px;
+            display: flex;
+            justify-content: center;          
+            flex-grow: 1; 
+            max-width: 360px;   
+            border: 10px solid transparent;
+            border-image: url(https://www.w3schools.com/cssref/border.png) 30 round;          
+        }
+        .buttonS
+        {
+            width: 100px;
+            height: 100px;  
+            background-size: cover; 
+            border-radius : 15px; 
+                                    
+        }
+        .buttonS:active{
+        background-color: black;
+        }
+        .TestDiv
+        {
+            background-color: chartreuse;
+        }
+        .StartButton
+        {
+            margin-top:20%; width: 100px; height: 100px; border-radius : 15px;
+        }
+        .RestartButton
+        {
+            margin-top:10%; width: 100px; height: 100px; border-radius : 15px;
+        }
+        .HideDiv
+        {
+            display: none; 
+            text-align: center;           
+        }
+        .InformationParagraph
+        {
+            margin-left: 48%;
+        }
+        .BorderTest
+        {
+            border: 1px solid black;
+        }
+        .EndDiv
+        {
+            display: none; 
+        }  
+        .tablestyle
+        {
+            border: 2px solid black;
+            border-collapse: collapse; 
+            border-radius : 15px; 
+            display: none;
+            position: absolute;
+            background-color: black;
+        }
+        .ButtonCredits
+        {
+            position: absolute;
+            border-radius : 15px;
+            background-color: green;
+            color: white;
+            top:0;
+            left:0;
+        }
+        .TextCenter
+        {  
+            font-size: large;         
+            color:white;
+            background-color: black;
+        }
+        .TableCredits
+        {
+            border: 2px solid black;
+            border-radius: 15px;     
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+        .CreditsTitle
+        {  
+            text-align: center;        
+            font-weight: bold;
+            color: white;
+        }
+        .BackButton
+        {      
+            border-radius : 15px;
+            background-color: black;
+            color: white;
+        }
+        .DivForStartAndRestartButton
+        {
+            display: flex;
+            justify-content: center;
+        }
+      </style>
+</head>
+<body style="background-color: gray;display:flex;width:100vw;justify-content:center;margin-top:30px;"> 
+
+    
+    <div id="MainDiv" class="centerDiv">  
+        <div id="Playfield">
+            <div class="DivForStartAndRestartButton">
+                <button id="StartBt" class="StartButton" onclick="Start()">Start</button>
+            </div>
+            <div id="ButtonDiv1" class="HideDiv">
+                <button onclick="ChosenButtonClicked(this.id)" id="bt1" name="Button1" class="buttonS" style="margin-top: 5%;" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt2" name="Button2" class="buttonS" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt3" name="Button3" class="buttonS" disabled></button>
+            </div>
+            <div id="ButtonDiv2" class="HideDiv">
+                <button onclick="ChosenButtonClicked(this.id)" id="bt4" name="Button4" class="buttonS" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt5" name="Button5" class="buttonS" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt6" name="Button6" class="buttonS" disabled></button>
+            </div>
+            <div id="ButtonDiv3" class="HideDiv">
+                <button onclick="ChosenButtonClicked(this.id)" id="bt7" name="Button7" class="buttonS" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt8" name="Button8" class="buttonS" disabled></button>
+                <button onclick="ChosenButtonClicked(this.id)" id="bt9" name="Button9" class="buttonS" disabled></button>     
+            </div>
+            <div>
+                <!--<p id="TESTDIV">test</p>
+                <p id="TESTDIV2">test</p>
+                <p id="TESTDIV3"></p>--> 
+                <table id="table1" class="tablestyle">
+                    <tr>
+                        <th >
+                            <p id="PointCounter" style="color: white; padding-top: 10px;">POINTS: 0</p>
+                        </th>               
+                    </tr>
+                </table>
+                <p id="InfoPar" class="InformationParagraph"></p>  
+            </div>
+        </div>          
+        <div id="EndDiv" class="EndDiv">
+            <p style="text-align: center; font-size:50px;">YOU FAILED</p>
+    
+            <p id="EndPoints" style="text-align: center; font-size:50px;">YOUR POINTS: 0</p>
+    
+            <div class="DivForStartAndRestartButton">
+                <button onclick="Restart()" class="RestartButton">RESTART</button>
+            </div>       
+        </div>
+        <button class="ButtonCredits" onclick="OpenCredits()">Credits</button>
+    <div id="Credits" style="display: none;">
+        <div>
+            <div>
+                <h1 class="CreditsTitle">Credits:</h1>
+                <table class="TableCredits">                   
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/banana_1135549?term=banana&page=1&position=9" class="TextCenter">Banana Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/strawberry_590685?term=strawberry&page=1&position=4" class="TextCenter">Strawberry Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/apple_2909753?term=apple%20fruit&page=1&position=3" class="TextCenter">Apple Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/berry_2909822?term=cherry&page=1&position=11" class="TextCenter">Cherry Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/lemon_2909837?term=lemon&page=1&position=3" class="TextCenter">Lemon Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/orange_1728729?term=orange&page=1&position=5" class="TextCenter">Orange Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/pineapple_928143?term=pineapple&page=1&position=2" class="TextCenter">Pineapple Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/watermelon_2224321?term=watermelon&page=1&position=5" class="TextCenter">Watermelon Icon</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="https://www.flaticon.com/free-icon/grapes_3054881?term=grape&page=1&position=5" class="TextCenter">Grape Icon</a>
+                        </th>
+                    </tr>
+                </table>   
+                <table class="TableCredits">
+                    <tr>
+                        <th> <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_border-image" class="TextCenter">Border Image</a></th>
+                    </tr>               
+                </table>          
+            </div>   
+            <button class="BackButton" onclick="BackFromContent()">Back</button>       
+        </div>
+    </div>
+    </div>
+    
+    <script>
+        var MainGame;
+
+        function OpenCredits()
+        {
+            document.getElementById("EndDiv").style.display = "none";
+            document.getElementById("Playfield").style.display = "none";
+            document.getElementById("Credits").style.display = "block";
+        }
+
+        function BackFromContent()
+        {
+            if(MainGame == true || MainGame == null)
+            {
+                document.getElementById("Playfield").style.display = "block";
+                
+            }
+            if(MainGame == false)
+            {   
+                document.getElementById("EndDiv").style.display = "block";
+            }                     
+            document.getElementById("Credits").style.display = "none";
+        }
+
+
+
+
+        var PicturesArray = ["https://www.flaticon.com/svg/static/icons/svg/1135/1135549.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/590/590685.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/2909/2909753.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/2909/2909822.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/2909/2909837.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/1728/1728729.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/928/928143.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/2224/2224321.svg",
+         "https://www.flaticon.com/svg/static/icons/svg/3054/3054881.svg"
+         ];
+
+        var ChosenButtonsList = [];
+
+        var IsItClickable = false;
+
+        var current_L_Index = 0; 
+        var index = 0;
+        var points = 0;
+        var counterLoop = 0;
+        var ShowButtonIndex = 0;
+
+        var RandomnumSave;
+
+       function Start()
+       {
+            document.getElementById("ButtonDiv1").style.display = "block";
+            document.getElementById("ButtonDiv2").style.display = "block";
+            document.getElementById("ButtonDiv3").style.display = "block";
+            document.getElementById("StartBt").style.display = "none";
+            PickAButton();
+       }
+       
+       function PickAButton()
+       {   
+            MainGame = true;
+            document.getElementById("table1").style.display = "block";
+            let allBtns = document.getElementsByClassName('buttonS');
+            let i = 0;
+            for(let btn of allBtns) {
+            btn.style.backgroundImage = "url(" + PicturesArray[i]+ ")";         
+            i++;
+            }          
+           IsItClickable = false;       
+            let rnd = Math.floor(Math.random() * 10);         
+            if(rnd == 0){
+                rnd = 1;
+            }  
+            if(RandomnumSave == rnd){
+                //console.log("Entered the IF");
+                while(RandomnumSave == rnd){
+                    rnd = Math.floor(Math.random() * 10); 
+                    //console.log("RND NUMBER IS: " + rnd);
+                }                                    
+            } 
+            if(rnd == 0){
+                rnd = 1;
+            }          
+
+            ChosenButtonsList.push(rnd);
+
+            ShowButtonIndex = 0;
+            counterLoop = 0;  
+
+            GoOverButtons();   
+
+            //document.getElementById("TESTDIV2").innerHTML = ChosenButtonsList;
+
+            //document.getElementById("TESTDIV").innerHTML = rnd;
+
+            RandomnumSave = rnd;
+            
+            //document.getElementById("TESTDIV3").innerHTML = RandomnumSave;
+            //setTimeout(AskForTheButton, 2000, false);  
+             
+       }
+
+       function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function GoOverButtons()
+       { 
+            AskForTheButton(true);
+            let l_lenght = ChosenButtonsList.length;
+            if(l_lenght != counterLoop)
+            {
+                EnableThePickedButton(ChosenButtonsList[ShowButtonIndex]);
+                if(await sleep(1000))
+                {
+                    AskForTheButton(true);
+                }               
+                counterLoop++; 
+                ShowButtonIndex++;
+                //console.log("Button: "+ ShowButtonIndex);                            
+                GoOverButtons();
+            }else{                
+                await sleep(50);
+                AskForTheButton(false);
+                IsItClickable = true;
+            }
+       }
+
+       function EnableThePickedButton(rnd)
+       {
+        let allBtns = document.getElementsByClassName('buttonS');
+        document.getElementById("bt" + rnd).disabled = false;
+       }
+
+       function AskForTheButton(input)
+       {
+            let allBtns = document.getElementsByClassName('buttonS');
+            for(let btn of allBtns)
+            {
+                btn.disabled = input;
+            }     
+       }    
+
+       function ChosenButtonClicked(id)
+       {
+            if(!IsItClickable) return;
+           
+            let buttonIDNumber;
+
+            //console.log("Button pressed: " + id);          
+
+            let temp = id.replace("bt", "");;
+            buttonIDNumber = parseInt(temp);
+
+            TestForButton(buttonIDNumber);                      
+       } 
+
+       
+       function TestForButton(input)
+       {
+        let List_lenght = ChosenButtonsList.length;              
+        
+        //console.log(current_L_Index);
+
+           if(current_L_Index != List_lenght)
+           {
+                if(input == ChosenButtonsList[index])
+                {                   
+                    //document.getElementById("InfoPar").innerHTML = "Correct!";
+                    
+                    current_L_Index++;
+                    index++;
+                    if(current_L_Index == List_lenght)
+                    {
+                        TestForButton(null);
+                    }
+                }else{
+                    //document.getElementById("InfoPar").innerHTML = "Wrong!";
+                    document.getElementById("EndDiv").style.display = "block"; 
+                    document.getElementById("Playfield").style.display = "none";
+                    document.getElementById("table1").style.display = "none";
+                    document.getElementById("EndPoints").innerHTML = "POINTS: " + points;
+                    MainGame = false;
+                    AskForTheButton(true);
+                }
+            }else{
+                //console.log("All good");
+                index = 0;
+                //console.log("Index after: " + index);
+                current_L_Index = 0;
+                points += 1;
+                document.getElementById("PointCounter").innerHTML = "POINTS: " + points;
+                PickAButton();
+            }
+       }   
+
+       function Restart()
+       {
+            index = 0;
+            current_L_Index = 0;
+            points = 0;
+            document.getElementById("PointCounter").innerHTML = "POINTS: " + points;
+            document.getElementById("EndDiv").style.display = "none"; 
+            document.getElementById("Playfield").style.display = "block";
+            document.getElementById("ButtonDiv1").style.display = "none";
+            document.getElementById("ButtonDiv2").style.display = "none";
+            document.getElementById("ButtonDiv3").style.display = "none";
+            document.getElementById("StartBt").style.display = "block";
+            ChosenButtonsList.length = 0;
+            MainGame = null;
+       }
+    </script>
+
+</body>
+</html>
