@@ -23,7 +23,14 @@
             height: 100px;  
             background-size: cover; 
             border-radius : 15px; 
-                                    
+            border: 1px solid black;
+            background-color: white;
+            cursor: pointer;
+        }
+        .buttonS_inactive{
+            background-color: gray;
+            cursor: default;
+            filter: grayscale(100%);
         }
         .buttonS:active{
         background-color: black;
@@ -56,7 +63,7 @@
         .EndDiv
         {
             display: none; 
-        }  
+        }
         .tablestyle
         {
             border: 2px solid black;
@@ -115,20 +122,16 @@
             <div class="DivForStartAndRestartButton">
                 <button id="StartBt" class="StartButton" onclick="Start()">Start</button>
             </div>
-            <div id="ButtonDiv1" class="HideDiv">
-                <button onclick="ChosenButtonClicked(this.id)" id="bt1" name="Button1" class="buttonS" style="margin-top: 5%;" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt2" name="Button2" class="buttonS" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt3" name="Button3" class="buttonS" disabled></button>
-            </div>
-            <div id="ButtonDiv2" class="HideDiv">
-                <button onclick="ChosenButtonClicked(this.id)" id="bt4" name="Button4" class="buttonS" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt5" name="Button5" class="buttonS" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt6" name="Button6" class="buttonS" disabled></button>
-            </div>
-            <div id="ButtonDiv3" class="HideDiv">
-                <button onclick="ChosenButtonClicked(this.id)" id="bt7" name="Button7" class="buttonS" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt8" name="Button8" class="buttonS" disabled></button>
-                <button onclick="ChosenButtonClicked(this.id)" id="bt9" name="Button9" class="buttonS" disabled></button>     
+            <div id="ButtonDiv" class="HideDiv" style="margin-top: 5%;flex-wrap:wrap;justify-content:center;">
+                <div onclick="ChosenButtonClicked(this.id)" id="bt1" name="Button1" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt2" name="Button2" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt3" name="Button3" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt4" name="Button4" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt5" name="Button5" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt6" name="Button6" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt7" name="Button7" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt8" name="Button8" class="buttonS" ></div>
+                <div onclick="ChosenButtonClicked(this.id)" id="bt9" name="Button9" class="buttonS" ></div>     
             </div>
             <div>
                 <!--<p id="TESTDIV">test</p>
@@ -155,64 +158,62 @@
         </div>
         <button class="ButtonCredits" onclick="OpenCredits()">Credits</button>
     <div id="Credits" style="display: none;">
-        <div>
-            <div>
-                <h1 class="CreditsTitle">Credits:</h1>
-                <table class="TableCredits">                   
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/banana_1135549?term=banana&page=1&position=9" class="TextCenter">Banana Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/strawberry_590685?term=strawberry&page=1&position=4" class="TextCenter">Strawberry Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/apple_2909753?term=apple%20fruit&page=1&position=3" class="TextCenter">Apple Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/berry_2909822?term=cherry&page=1&position=11" class="TextCenter">Cherry Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/lemon_2909837?term=lemon&page=1&position=3" class="TextCenter">Lemon Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/orange_1728729?term=orange&page=1&position=5" class="TextCenter">Orange Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/pineapple_928143?term=pineapple&page=1&position=2" class="TextCenter">Pineapple Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/watermelon_2224321?term=watermelon&page=1&position=5" class="TextCenter">Watermelon Icon</a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="https://www.flaticon.com/free-icon/grapes_3054881?term=grape&page=1&position=5" class="TextCenter">Grape Icon</a>
-                        </th>
-                    </tr>
-                </table>   
-                <table class="TableCredits">
-                    <tr>
-                        <th> <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_border-image" class="TextCenter">Border Image</a></th>
-                    </tr>               
-                </table>          
-            </div>   
-            <button class="BackButton" onclick="BackFromContent()">Back</button>       
-        </div>
+         <div>
+            <h1 class="CreditsTitle">Credits:</h1>
+            <table class="TableCredits">                   
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/banana_1135549?term=banana&page=1&position=9" class="TextCenter">Banana Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/strawberry_590685?term=strawberry&page=1&position=4" class="TextCenter">Strawberry Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/apple_2909753?term=apple%20fruit&page=1&position=3" class="TextCenter">Apple Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/berry_2909822?term=cherry&page=1&position=11" class="TextCenter">Cherry Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/lemon_2909837?term=lemon&page=1&position=3" class="TextCenter">Lemon Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/orange_1728729?term=orange&page=1&position=5" class="TextCenter">Orange Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/pineapple_928143?term=pineapple&page=1&position=2" class="TextCenter">Pineapple Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/watermelon_2224321?term=watermelon&page=1&position=5" class="TextCenter">Watermelon Icon</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a href="https://www.flaticon.com/free-icon/grapes_3054881?term=grape&page=1&position=5" class="TextCenter">Grape Icon</a>
+                    </th>
+                </tr>
+            </table>   
+            <table class="TableCredits">
+                <tr>
+                    <th> <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_border-image" class="TextCenter">Border Image</a></th>
+                </tr>               
+            </table>          
+        </div>   
+        <button class="BackButton" onclick="BackFromContent()">Back</button>
     </div>
     </div>
     
@@ -268,9 +269,7 @@
 
        function Start()
        {
-            document.getElementById("ButtonDiv1").style.display = "block";
-            document.getElementById("ButtonDiv2").style.display = "block";
-            document.getElementById("ButtonDiv3").style.display = "block";
+            document.getElementById("ButtonDiv").style.display = "flex";
             document.getElementById("StartBt").style.display = "none";
             PickAButton();
        }
@@ -348,7 +347,8 @@
        function EnableThePickedButton(rnd)
        {
         let allBtns = document.getElementsByClassName('buttonS');
-        document.getElementById("bt" + rnd).disabled = false;
+        let btn = document.getElementById("bt" + rnd);
+        btn.classList.remove('buttonS_inactive');
        }
 
        function AskForTheButton(input)
@@ -356,9 +356,13 @@
             let allBtns = document.getElementsByClassName('buttonS');
             for(let btn of allBtns)
             {
-                btn.disabled = input;
+                if(input){
+                    btn.classList.add('buttonS_inactive');
+                } else {
+                    btn.classList.remove('buttonS_inactive');
+                }
             }     
-       }    
+       }
 
        function ChosenButtonClicked(id)
        {
@@ -421,9 +425,7 @@
             document.getElementById("PointCounter").innerHTML = "POINTS: " + points;
             document.getElementById("EndDiv").style.display = "none"; 
             document.getElementById("Playfield").style.display = "block";
-            document.getElementById("ButtonDiv1").style.display = "none";
-            document.getElementById("ButtonDiv2").style.display = "none";
-            document.getElementById("ButtonDiv3").style.display = "none";
+            document.getElementById("ButtonDiv").style.display = "none";
             document.getElementById("StartBt").style.display = "block";
             ChosenButtonsList.length = 0;
             MainGame = null;
