@@ -52,7 +52,7 @@
         {
             margin-top:10%; width: 100px; height: 100px; border-radius : 15px;
         }
-        button:hover
+        .UsableButton:hover
         {
             background-color: lightseagreen;color: white;
         }
@@ -129,7 +129,7 @@
     <div id="MainDiv" class="centerDiv">  
         <div id="Playfield">
             <div class="DivForStartAndRestartButton">
-                <button id="StartBt" class="StartButton" onclick="Start()">Start</button>
+                <button id="StartBt" class="StartButton UsableButton" onclick="Start()">Start</button>
             </div>
             <div id="ButtonDiv" class="HideDiv" style="margin-top: 5%;flex-wrap:wrap;justify-content:center;">
                 <div onclick="ChosenButtonClicked(this.id)" id="bt1" name="Button1" class="buttonS" ></div>
@@ -162,7 +162,7 @@
             <p id="EndPoints" style="text-align: center; font-size:50px;">YOUR POINTS: 0</p>
     
             <div class="DivForStartAndRestartButton">
-                <button onclick="Restart()" class="RestartButton">RESTART</button>
+                <button onclick="Restart()" class="RestartButton UsableButton">RESTART</button>
             </div>       
         </div>
         <button class="ButtonCredits" onclick="OpenCredits()">Credits</button>
