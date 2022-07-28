@@ -121,6 +121,16 @@
             display: flex;
             justify-content: center;
         }
+        .quote{
+            position: absolute;
+            top: 60rem;
+            left: 34rem;
+            right: 35rem;
+            text-align: center;
+            color: white;
+            background: cadetblue;
+            border-radius: 4rem;
+        }
       </style>
 </head>
 <body style="background-color: lightblue;display:flex;width:100vw;justify-content:center;margin-top:30px;"> 
@@ -165,7 +175,7 @@
                 <button onclick="Restart()" class="RestartButton UsableButton">RESTART</button>
             </div>       
         </div>
-        <button class="ButtonCredits" onclick="OpenCredits()">Credits</button>
+        <button class="ButtonCredits UsableButton" onclick="OpenCredits()">Credits</button>
     <div id="Credits" style="display: none;">
          <div>
             <h1 class="CreditsTitle">Credits:</h1>
@@ -222,7 +232,13 @@
                 </tr>               
             </table>          
         </div>   
-        <button class="BackButton" onclick="BackFromContent()">Back</button>
+        <button class="BackButton UsableButton" onclick="BackFromContent()">Back</button>
+        <div class="quote">
+            <h1 style="font-weight: 600;">”Hello there. Thank you for checking you one of my first master pieces. Back when i was making this i though I'll never be able for more, but i kept learning and reached to level where I can understand more easily everything. So keep learning and never give up!”</h1>
+            <h4 style="font-weight: 600;color: darkslateblue;">~ Eddy0021</h4>       
+        </div>
+            
+    </div>
     </div>
     </div>
     
